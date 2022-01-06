@@ -31,10 +31,7 @@ let sumCurrentScore = 0;
 let activePlayer = 0;
 let winner = [0, 0];
 
-// player1Score.winner[0];
-// player2Score.winner[1];
-
-// Pass the value into {Roll Dice} button
+// Roll Dice button
 btnRollDice.addEventListener('click', function () {
   let generateDiceValue = Math.trunc(Math.random() * 6 + 1);
 
