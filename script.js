@@ -10,11 +10,13 @@ let dice = document.querySelector('.dice');
 const player1Name = document.getElementById('name--0');
 let player1Score = document.getElementById('score--0');
 let plyaer1CurrentScore = document.getElementById('current--0');
+const player1 = document.querySelector('.player--0');
 
 //second player object
 const player2Name = document.getElementById('name--1');
 let player2Score = document.getElementById('score--1');
 let plyaer2CurrentScore = document.getElementById('current--1');
+const player2 = document.querySelector('.player--1');
 
 // hide the dice at first
 dice.classList.add('hidden');
@@ -68,7 +70,6 @@ btnRollDice.addEventListener('click', function () {
     sumCurrentScore += generateDiceValue;
     document.getElementById(`current--${activePlayer}`).textContent =
       sumCurrentScore;
-    console.log(sumCurrentScore);
   } else {
     document.getElementById(`current--${activePlayer}`).textContent =
       sumCurrentScore = 0;
@@ -79,8 +80,6 @@ btnRollDice.addEventListener('click', function () {
 // Hold Buttion
 hold.addEventListener('click', function () {
   if (activePlayer === 0) {
-    // it just need to hold in array
-
     player1Score.textContent = winner[0] += sumCurrentScore;
     plyaer1CurrentScore.textContent = sumCurrentScore = 0;
     activePlayer = activePlayer === 0 ? 1 : 0;
@@ -94,4 +93,13 @@ hold.addEventListener('click', function () {
     alert(winner[i]);
     break;
   }
+});
+
+// New Game
+newGame.addEventListener('click', function () {
+  player1Score.textContent = 0;
+  player2Score.textContent = 0;
+  plyaer1CurrentScore.textContent = 0;
+  plyaer2CurrentScore.textContent = 0;
+  dice.classList.add('hidden');
 });
